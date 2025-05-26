@@ -1,14 +1,21 @@
 {
 	"layer": "top",
-	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-left": [
+		"custom/corner-left",
+		"cpu",
+		"memory",
+		"custom/corner-right",
+	],
 	"modules-center": [
 		"custom/mpris-corner-left",
 		"mpris",
 		"custom/mpris-corner-right",
 	],
 	"modules-right": [
+
 		"custom/corner-left",
-		// "cpu",
+		"bluetooth",
+		"battery",
 		// "custom/weather-icon",
 		"clock",
 		"custom/corner-right"
@@ -18,11 +25,92 @@
 	"passthrough": false,
 	"height": 30,
 	"position": "top",
+	"cpu" : {
+		"interval" : 2,
+		"format" : " {usage}%",
+		"tooltip" : true
+		// "states"
+		// on-click
+	},
+	"memory" : {
+		"interval" : 2,
+		"format" : "  {percentage}%",
+		"tooltip" : false
+		// "states"
+		// on-click
+	},
+	"battery": {
+		// "bat": "BAT2",
+		"interval": 60,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{time} {icon}",
+		"format-icons": ["", "", "", "", ""],
+	},
+		// … your other top-level bar settings …
+	  
+		"bluetooth": {
+		  // refresh every 30 s
+		  "interval": 30,
 
+		  // when no devices are connected
+		  "format-off":    "{icon}",
+		  // when the controller is on but not connected
+		  "format-on":     "{icon}",
+		  // when at least one device is connected
+		  "format-connected": "{icon} {device_alias}",
+	  
+		  "icon":            "",   // fa-bluetooth
+		  "format-icons": {               // fall back to these if you like
+			"off":        "",            // fa-bluetooth-off
+			"connected":  ""
+		  },
+	  
+		  // ranking of which paired device’s name to display first
+		  "format-device-preference": ["My Headphones","My Keyboard","*"],
+	  
+		  // show full paired/enumerated list in the tooltip
+		  "tooltip": true,
+		  "tooltip-format":             "{device_enumerate}",
+		  "tooltip-format-enumerate":   "{device_alias}  {device_address}",
+	  
+		  // styling classes
+		  "class-on":          "inactive",
+		  "class-off":         "error",
+		  "class-connected":   "active",
+	  
+		  // actions
+		  "on-click":      "blueman-manager",
+		  "on-scroll-up":  "bluetoothctl connect $(bluetoothctl paired-devices | awk 'NR==2{print $2}')",
+		  "on-scroll-down":"bluetoothctl disconnect $(bluetoothctl paired-devices | awk 'NR==2{print $2}')"
+		},
+
+
+
+
+
+
+
+
+
+
+
+
+
+"custom/volume_background": {
+        "format": "                                                         {}", // The script will output the JSON for the module
+        "exec": "~/.config/waybar/scripts/get_volume_bg_info.sh",
+        "interval": "once", // Only update on signal or initial load
+        "signal": 1, // Responds to SIGRTMIN+1
+        "tooltip": false,
+		"return-type"  : "json"
+    },
 	"mpris": {
 		"id" : "mpris",
-		"format": "{status_icon} <i>{title}</i>",
-		"format-paused": "{status_icon} <i>{title}</i>",
+		"format": "<i>{title}</i>",
+		"format-paused": "<i>{title}</i>",
 		"status-icons": {
 			"playing": "⏸",
 			"paused": "▶",
@@ -30,14 +118,19 @@
 		},
 		"tooltip": false,
 		"max-length": 30,
-		"min-length": 30
+		"min-length": 30,
+		// TODO : Add this also in mpris-info bar
+"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%; echo 'active' > /tmp/waybar_volume_active.flag; pkill -SIGRTMIN+1 waybar; ~/.config/waybar/scripts/schedule_volume_bg_reset.sh &",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%; echo 'active' > /tmp/waybar_volume_active.flag; pkill -SIGRTMIN+1 waybar; ~/.config/waybar/scripts/schedule_volume_bg_reset.sh &"
 		// TODO : background dynamically changes according to video
 	},
 	"custom/mpris-corner-right" : {
-		"format" : "   ",
+		"format" : " ▶  ",
+		"on-click": "playerctl next"
 	},
 	"custom/mpris-corner-left" : {
-		"format" : "   ",
+		"format" : "  ◀ ",
+		"on-click": "playerctl previous"
 	},
 	"clock": {
 		"interval" : 1,

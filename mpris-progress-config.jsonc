@@ -17,16 +17,29 @@
 		"id" : "mpris-progress",
 		"format": "{}",
 		"exec": "~/.config/waybar/scripts/mpris_progress_bar.sh",
-		"return-type": "text",
+		"return-type": "json",
 		"interval": 1,
+		"signal": 1,
 		"tooltip": false,
 		"on-click": "playerctl play-pause",
 		"escape": false,
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%; echo 'active' > /tmp/waybar_volume_active.flag; pkill -SIGRTMIN+1 waybar; ~/.config/waybar/scripts/schedule_volume_bg_reset.sh &",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%; echo 'active' > /tmp/waybar_volume_active.flag; pkill -SIGRTMIN+1 waybar; ~/.config/waybar/scripts/schedule_volume_bg_reset.sh &"
 	},
 	"custom/mpris-info-corner-right" : {
-		"format" : "   ",
+		"format": "{}", // Script will provide the class and text
+        "exec": "~/.config/waybar/scripts/corner_module_status.sh", // New script
+        "return-type": "json",
+        "interval": "once", // Only update on signal
+        "signal": 1,        // Responds to the same signal
+        "tooltip": false
 	},
 	"custom/mpris-info-corner-left" : {
-		"format" : "   ",
+		"format": "{}", // Script will provide the class and text
+        "exec": "~/.config/waybar/scripts/corner_module_status.sh", // New script
+        "return-type": "json",
+        "interval": "once", // Only update on signal
+        "signal": 1,        // Responds to the same signal
+        "tooltip": false
 	},
 }
