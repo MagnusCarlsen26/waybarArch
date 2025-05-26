@@ -17,29 +17,29 @@ window#mpris {
 
   background : transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.113);
-  border-left: 1px solid rgba(255, 255, 255, 0.113);
-  border-right: 1px solid rgba(255, 255, 255, 0.113);
-  border-bottom: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-top-left-radius: 25px;
+  /* border-left: 1px solid rgba(255, 255, 255, 0.113); */
+  /* border-right: 1px solid rgba(255, 255, 255, 0.113); */
+  /* border-bottom: none; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+  /* border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  padding: 0 20 ;
+  padding: 0 20 ; */
 }
 
 #custom-mpris-progress {
   background : transparent;
 
-  border-left: 1px solid rgba(255, 255, 255, 0.113);
-  border-right: 1px solid rgba(255, 255, 255, 0.113);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.113);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  
-  padding: 0 20 ;
+  /* border-left: 1px solid rgba(255, 255, 255, 0.113); */
+  /* border-right: 1px solid rgba(255, 255, 255, 0.113); */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.113); */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+  /* border-bottom-left-radius: 25px; */
+  /* border-bottom-right-radius: 25px; */
+  padding: 5 0;
+  /* padding: 0 20 ; */
 }
 
-#clock {
+#clock, #custom-timed-emoji-clock {
   background : transparent;
 
   /* margin-right: 10; */
@@ -49,6 +49,31 @@ window#mpris {
   border-bottom: 1px solid rgba(255, 255, 255, 0.113);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   /* padding: 0 10 ; */
+}
+
+#custom-weather-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 20px; /* Adjust size as needed */
+  border-top: 1px solid rgba(255, 255, 255, 0.113);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.113);
+}
+
+#custom-weather-icon.cloud-sun {
+  background-image: url("/home/khushal/.config/waybar/icons/cloud-sun.png");
+}
+
+#custom-weather-icon.sun {
+  background-image: url("/home/khushal/.config/waybar/icons/sun.png");
+}
+
+#custom-weather-icon.moon-cloud {
+  background-image: url("/home/khushal/.config/waybar/icons/moon-cloud.png");
+}
+
+#custom-weather-icon.moon {
+  background-image: url("/home/khushal/.config/waybar/icons/moon.png");
 }
 
 #custom-corner-right {
@@ -63,9 +88,43 @@ window#mpris {
 
 #custom-corner-left {
   /* background-color: #f8f8f2; */
+  border-top: 1px solid rgba(255, 255, 255, 0.113);
+  border-left: 1px solid rgba(255, 255, 255, 0.113);
 
   border-top: 1px solid rgba(255, 255, 255, 0.113);
   border-bottom: 1px solid rgba(255, 255, 255, 0.113);
   border-top-left-radius: 50;
   border-bottom-left-radius: 50;
+}
+
+#custom-mpris-corner-right {
+  border-top: 1px solid rgba(255, 255, 255, 0.113);
+  border-right: 1px solid rgba(255, 255, 255, 0.113);
+  /* background-color: #f8f8f2; */
+  border-top-right-radius: 100%;
+}
+
+#custom-mpris-corner-left {
+	
+  border-top: 1px solid rgba(255, 255, 255, 0.113);
+  border-left: 1px solid rgba(255, 255, 255, 0.113);
+
+  /* background-color: #f8f8f2; */
+  border-top-left-radius: 100%;
+}
+
+
+#custom-mpris-info-corner-right {
+	
+  border-bottom: 1px solid rgba(255, 255, 255, 0.113);
+  border-right: 1px solid rgba(255, 255, 255, 0.113);
+  /* background-color: #f8f8f2; */
+  border-bottom-right-radius: 100%;
+}
+
+#custom-mpris-info-corner-left {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.113);
+  border-left: 1px solid rgba(255, 255, 255, 0.113);
+  /* background-color: #f8f8f2; */
+  border-bottom-left-radius: 100%;
 }

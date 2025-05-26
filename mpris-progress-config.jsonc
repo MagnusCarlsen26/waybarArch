@@ -2,7 +2,9 @@
 	"layer": "top",
 	"modules-left": [],
 	"modules-center": [
-		"custom/mpris-progress"
+		"custom/mpris-info-corner-left",
+		"custom/mpris-progress",
+		"custom/mpris-info-corner-right",
 	],
 	"modules-right": [
 	],
@@ -20,5 +22,11 @@
 		"tooltip": false,
 		"on-click": "playerctl play-pause",
 		"escape": false,
-	}
+	},
+	"custom/mpris-info-corner-right" : {
+		"format" : "   ",
+	},
+	"custom/mpris-info-corner-left" : {
+		"format" : "   ",
+	},
 }

@@ -2,10 +2,14 @@
 	"layer": "top",
 	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": [
+		"custom/mpris-corner-left",
 		"mpris",
+		"custom/mpris-corner-right",
 	],
 	"modules-right": [
 		"custom/corner-left",
+		// "cpu",
+		// "custom/weather-icon",
 		"clock",
 		"custom/corner-right"
 		// ... your other modules
@@ -27,15 +31,32 @@
 		"tooltip": false,
 		"max-length": 30,
 		"min-length": 30
+		// TODO : background dynamically changes according to video
+	},
+	"custom/mpris-corner-right" : {
+		"format" : "   ",
+	},
+	"custom/mpris-corner-left" : {
+		"format" : "   ",
 	},
 	"clock": {
 		"interval" : 1,
-        "format": "{:%H:%M:%S}",
+        "format": "{:%C %B, %H:%M:%S}",
+		"tooltip" : false
+		// "on-click" : TODO: when clicked secs display should be toggled, more options possible.
     },
 	"custom/corner-left" : { 
 		"format" : "  ",
 	},
 	"custom/corner-right" : { 
 		"format" : "  ",
-	}
+	},
+	"custom/weather-icon": {
+        "format": "{}", // This will display the "text" field from the JSON output.
+        "exec": "/home/khushal/.config/waybar/scripts/timed_icon.sh",
+        "return-type": "json",
+        "interval": 1,
+        // The "classes" array is removed here, as the script dynamically sets the class.
+        "tooltip": false // This will be respected as the script doesn't send a "tooltip" field.
+    }
 }
