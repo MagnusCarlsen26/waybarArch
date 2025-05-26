@@ -1,42 +1,42 @@
 * {
-    font-family: "JetBrains Mono Nerd Font";
-    color: #f8f8f2;
-    background: rgba(40, 42, 54, 0.8);
-  }
+  font-family: "JetBrains Mono Nerd Font";
+  color: #f8f8f2;
+}
+
+window#waybar {
+  background-color: transparent; /* Make the background transparent */
+  transition-property: margin-top;
+  transition-duration: 0.25s; /* Animation speed */
+}
+
+window#mpris { 
+
+  background : transparent;
+}
+#mpris { 
+
+  background : transparent;
+  /* background-color: rgba(255, 255, 255, 0.098); */
+  border-top: 1px solid rgba(255, 255, 255, 0.113);
+  border-left: 1px solid rgba(255, 255, 255, 0.113);
+  border-right: 1px solid rgba(255, 255, 255, 0.113);
+  border-bottom: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 0 20 ;
+}
+
+#custom-mpris-progress {
+  background : transparent;
+
+  /* background-color: rgba(255, 255, 255, 0.098); */
+  border-left: 1px solid rgba(255, 255, 255, 0.113);
+  border-right: 1px solid rgba(255, 255, 255, 0.113);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.113);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
   
-  #waybar {
-    border-bottom: 1px solid #6272a4;
-    padding: 0 8px;
-  }
-  
-  #workspaces button {
-    margin: 0 4px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: transparent;
-  }
-  
-  #workspaces button.active {
-    background: #6272a4;
-  }
-  
-  #clock {
-    color: #50fa7b;
-  }
-  
-  #network {
-    color: #8be9fd;
-  }
-  
-  #pulseaudio {
-    color: #ff79c6;
-  }
-  
-  #battery {
-    color: #f1fa8c;
-  }
-  
-  #memory, #cpu {
-    color: #bd93f9;
-  }
-  
+  padding: 0 20 ;
+}

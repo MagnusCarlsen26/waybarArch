@@ -1,16 +1,34 @@
 {
 	"layer": "top",
 	"modules-left": ["sway/workspaces", "sway/mode"],
-	"modules-center": ["sway/window"],
-	"modules-right": ["battery", "clock"],
-	"sway/window": {
-		"max-length": 50
-	},
-	"battery": {
-		"format": "{capacity}% {icon}",
-		"format-icons": ["", "", "", "", ""]
+	"modules-center": [
+		"mpris",
+	],
+	"modules-right": [
+		"clock"
+		// ... your other modules
+	],
+	"exclusive": true,
+	"passthrough": false,
+	"height": 30,
+	"position": "top",
+
+	"mpris": {
+		"id" : "mpris",
+		"format": "{status_icon} <i>{title}</i>",
+		"format-paused": "{status_icon} <i>{title}</i>",
+		"status-icons": {
+			"playing": "⏸",
+			"paused": "▶",
+			"stopped": "󰓛"
+		},
+		"tooltip": false,
+		"max-length": 30,
+		"min-length": 30
 	},
 	"clock": {
-		"format-alt": "{:%a, %d. %b  %H:%M}"
-	}
+		"interval" : 1,
+        "format": " {:%H:%M:%S}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>\n{:%H:%M:%S}"
+    }
 }

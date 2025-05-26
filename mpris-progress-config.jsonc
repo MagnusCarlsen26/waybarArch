@@ -1,0 +1,24 @@
+{
+	"layer": "top",
+	"modules-left": [],
+	"modules-center": [
+		"custom/mpris-progress"
+	],
+	"modules-right": [
+	],
+	"exclusive": false,
+	"passthrough": false,
+	"height": 20,
+	"position": "top",
+
+	"custom/mpris-progress": {
+		"id" : "mpris-progress",
+		"format": "{}",
+		"exec": "~/.config/waybar/scripts/mpris_progress_bar.sh",
+		"return-type": "text",
+		"interval": 1,
+		"tooltip": false,
+		"on-click": "playerctl play-pause",
+		"escape": false,
+	}
+}
