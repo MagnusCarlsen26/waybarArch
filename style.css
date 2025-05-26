@@ -16,12 +16,11 @@ window#mpris {
 #mpris { 
 
   background : transparent;
-  /* background-color: rgba(255, 255, 255, 0.098); */
   border-top: 1px solid rgba(255, 255, 255, 0.113);
   border-left: 1px solid rgba(255, 255, 255, 0.113);
   border-right: 1px solid rgba(255, 255, 255, 0.113);
   border-bottom: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 0 20 ;
@@ -30,13 +29,43 @@ window#mpris {
 #custom-mpris-progress {
   background : transparent;
 
-  /* background-color: rgba(255, 255, 255, 0.098); */
   border-left: 1px solid rgba(255, 255, 255, 0.113);
   border-right: 1px solid rgba(255, 255, 255, 0.113);
   border-bottom: 1px solid rgba(255, 255, 255, 0.113);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   
   padding: 0 20 ;
+}
+
+#clock {
+  background : transparent;
+
+  /* margin-right: 10; */
+
+  border-top: 1px solid rgba(255, 255, 255, 0.113);
+  /* border-left: 1px solid rgba(255, 255, 255, 0.113); */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.113);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* padding: 0 10 ; */
+}
+
+#custom-corner-right {
+
+  /* background-color: #f8f8f2; */
+  border-top: 1px solid rgba(255, 255, 255, 0.113);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.113);
+  border-right: 1px solid rgba(255, 255, 255, 0.113);
+  border-top-right-radius: 50;
+  border-bottom-right-radius: 50;
+}
+
+#custom-corner-left {
+  /* background-color: #f8f8f2; */
+
+  border-top: 1px solid rgba(255, 255, 255, 0.113);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.113);
+  border-top-left-radius: 50;
+  border-bottom-left-radius: 50;
 }

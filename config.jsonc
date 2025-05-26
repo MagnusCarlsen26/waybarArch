@@ -5,7 +5,9 @@
 		"mpris",
 	],
 	"modules-right": [
-		"clock"
+		"custom/corner-left",
+		"clock",
+		"custom/corner-right"
 		// ... your other modules
 	],
 	"exclusive": true,
@@ -28,7 +30,12 @@
 	},
 	"clock": {
 		"interval" : 1,
-        "format": " {:%H:%M:%S}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>\n{:%H:%M:%S}"
-    }
+        "format": "{:%H:%M:%S}",
+    },
+	"custom/corner-left" : { 
+		"format" : "  ",
+	},
+	"custom/corner-right" : { 
+		"format" : "  ",
+	}
 }
