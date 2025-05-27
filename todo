@@ -2,14 +2,14 @@
     a. Brightness ( aka backlight )
     b. Battery --- done
     c. Bluetooth
-    d. Clock
+    d. Clock --- done
     e. CPU Load --- done
     f. image 
     g. memory --- done
     i. mpris --- done
-        - pause video when clicked on progress bar
-    k. network 
-    l. pulse audio
+        - pause video when clicked on progress bar --- done
+    k. network --- partial done
+    l. pulse audio --- done
     m. todo
     n. email
 
@@ -27,3 +27,6 @@
 13.[] random music player
 14.[] mpris-progress bar not correct for 0 < volume < 100.
 15.[] give some visual response when video is paused.
+16.[] set minimum length in mpris modules. when video is changed they collapse.
+17.[] wifi has signal options as emoji
+18.[] wifi module requires a lot of work

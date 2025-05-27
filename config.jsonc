@@ -15,6 +15,7 @@
 
 		"custom/corner-left",
 		"bluetooth",
+		"network",
 		"battery",
 		// "custom/weather-icon",
 		"clock",
@@ -87,6 +88,23 @@
 		  "on-scroll-down":"bluetoothctl disconnect $(bluetoothctl paired-devices | awk 'NR==2{print $2}')"
 		},
 
+			// ... other modules ...
+		
+			"network": {
+				"interface": "wlan0", // IMPORTANT: Replace wlan0 with your actual Wi-Fi interface name
+									  // Use `ip link` or `iw dev` to find your Wi-Fi interface name (e.g., wlp2s0, wlp3s0)
+				"format-wifi": "󰖩 ({signalStrength}%)", // Icon, SSID, Signal Strength
+				"format-disconnected": "󰖪",
+				"format-alt": "{ifname}: {ipaddr}/{cidr} |  {essid} ({signalStrength}%)", // Alternative format on right-click or other trigger
+				"tooltip-format": "{ifname} via {gwaddr} \nSignal: {signalStrength}% @ {frequency}MHz\nIP: {ipaddr}/{cidr}\nMAC: {hwaddr}",
+				"on-click": "nm-connection-editor", // Opens network manager GUI (requires network-manager-applet)
+													// Alternatively, use your preferred network manager CLI or script
+				"on-click-right": "pavucontrol", // Example: open pavucontrol on right click (change as needed)
+				"interval": 5 // How often to update in seconds
+			},
+		
+			// ... other modules ...
+		
 
 
 
