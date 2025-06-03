@@ -47,7 +47,7 @@ window#mpris {
   padding-right : 10px
 }
 
-#clock, #custom-timed-emoji-clock, #cpu, #memory, #battery, #bluetooth {
+#clock, #custom-timed-emoji-clock, #cpu, #memory, #battery, #bluetooth, #network {
   background : transparent;
   font-size: large;
 
